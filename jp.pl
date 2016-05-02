@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 
 use Hash::Util;
-use JSON::PP;
+use JSON::XS;
 use Data::Dumper;
 use Getopt::Long;
 use 5.012;
@@ -13,7 +13,7 @@ use Data::Diver qw(DiveRef);
 
 Getopt::Long::Configure('no_ignore_case');
 
-my $j= JSON::PP->new();
+my $j= JSON::XS->new();
 
 my $pretty;
 my $reduce;
