@@ -32,21 +32,29 @@ exit unless $s;
 
 my $orig = $j->decode($s);
 my $new = dclone($orig);
+my @objects;
 
-if( $reduce ) {
-    $new = $new->{$reduce};
+if( ref $new eq 'ARRAY' ) {
+    @objects = @$new;
 }
-
-for my $del_key (@delete) {
-    my @path = split(/\./,$del_key);
-    my $last_key = pop @path;
-    my $ref = ${ DiveRef($new, @path) };
-    delete $ref->{ $last_key};
+elsif( ref $new eq 'HASH') {
+    push @objects, $new;
 }
+for my $h (@objects) {
+    if ( $reduce ) {
+        $h = $h->{$reduce};
+    }
 
-if( $pretty ) {
-    $j->pretty(1);
-    $j->space_before(0);
+    for my $del_key (@delete) {
+        my @path = split(/\./,$del_key);
+        my $last_key = pop @path;
+        my $ref = ${ DiveRef($h, @path) };
+        delete $ref->{ $last_key};
+    }
+
+    if ( $pretty ) {
+        $j->pretty(1);
+        $j->space_before(0);
+    }
 }
-
 print $j->encode($new);
