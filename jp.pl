@@ -4,7 +4,7 @@ use Hash::Util;
 use JSON::XS;
 use Data::Dumper;
 use Getopt::Long;
-use 5.012;
+use 5.010;
 use Carp;
 use strict;
 use warnings;
