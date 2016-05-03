@@ -10,10 +10,17 @@ to STDOUT. Primary use case for me has been to delete extra stuff from JSON obje
 # Parameters
 
 * [--pretty|-p]
-** Make the output human readable by adding whitespace
-* [--reduce|-r <key>]
-** Remove everything else and move the value of <key> to the "root"
-
-** e.g with -r foo, this: {"foo":{"bar":1,"fubar":"string"}}
-** Will become this: {"bar":1,"fubar":"string"}
+  * Make the output human readable by adding whitespace
+* [--reduce|-r &lt;key&gt;]
+  * Remove everything else and move the value of &lt;key&gt; to the "root"
+  * e.g with -r foo, this:
+    
+    {"foo":{"bar":1,"fubar":"string"}}
+  * Will become this:
+    
+    {"bar":1,"fubar":"string"}
+* [--delete|-d &lt;key&gt;]
+  * Delete &lt;key&gt; and its value
+* [--select|-s &lt;key&gt;]
+  * Does nothing yet (TODO)
 
