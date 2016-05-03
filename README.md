@@ -2,12 +2,12 @@
 
 For want of a better name...
 
-# Purpose
+## Purpose
 
 The script contained reads JSON from STDIN and manipulates it according to the parameters and prints
 to STDOUT. Primary use case for me has been to delete extra stuff from JSON objects when doing CRUD operations with curl.
 
-# Parameters
+## Parameters
 
 * [--pretty|-p]
   * Make the output human readable by adding whitespace
@@ -24,3 +24,14 @@ to STDOUT. Primary use case for me has been to delete extra stuff from JSON obje
 * [--select|-s &lt;key&gt;]
   * Does nothing yet (TODO)
 
+## Requirements
+
+* Perl 5.10 or greater
+* Perl modules:
+  * Hash::Util
+  * JSON::XS
+  * Data::Dumper
+  * Getopt::Long
+  * Carp
+  * Storable
+  * Data::Diver
