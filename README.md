@@ -2,6 +2,8 @@
 
 For want of a better name...
 
+`jsed` for short. Suggest to use a symbolic link `jsed` to `jsed.pl`.
+
 ## Description
 
 Reads JSON from STDIN, manipulates it and prints the resulting JSON to STDOUT. Primary use case
