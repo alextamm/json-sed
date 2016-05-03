@@ -26,7 +26,7 @@ for me has been to delete extra stuff from JSON objects when doing CRUD operatio
     
     `{"bar":1,"fubar":"string"}`
 * `[--delete|-d <key>]`
-  * Delete <key> and its value
+  * Delete `<key>` and its value
 * `[--select|-s <key>]`
   * Does nothing yet (TODO)
 
